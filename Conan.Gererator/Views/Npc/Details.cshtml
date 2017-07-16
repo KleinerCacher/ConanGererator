@@ -1,0 +1,131 @@
+﻿@model Conan.Npc.Generator.Models.AbstractNpc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Npc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Awareness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Awareness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Intelligence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Intelligence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brawn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brawn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Willpower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Willpower)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coordination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coordination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Combat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Combat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fortitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fortitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Knowledge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Knowledge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Social)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Social)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Conan.Npc.Generator.Models.AbstractNpc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Awareness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Intelligence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brawn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Willpower)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Coordination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Combat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fortitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Knowledge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Social)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Awareness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intelligence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brawn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Willpower)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Coordination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Combat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fortitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Senses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Knowledge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Social)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
