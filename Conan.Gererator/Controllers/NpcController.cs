@@ -6,10 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Conan.Gererator.Models;
-using Conan.Npc.Generator.Models;
+using Conan.Generator.Models;
+using Conan.Generator.ViewModels;
 
-namespace Conan.Gererator.Controllers
+namespace Conan.Generator.Controllers
 {
     public class NpcController : Controller
     {
@@ -39,7 +39,26 @@ namespace Conan.Gererator.Controllers
         // GET: Npc/Create
         public ActionResult Create()
         {
-            return View();
+            var npc = new AbstractNpc
+            {
+                Agility = 9,
+                Awareness = 9,
+                Brawn = 9,
+                Coordination = 9,
+                Personality = 9,
+                Willpower = 9,
+                Intelligence = 9,
+                Type = NpcType.Toughend,
+                Combat = 0,
+                Fortitude = 0,
+                Movement = 0,
+                Knowledge = 0,
+                Senses = 0,
+                Social = 0,
+                Name = "Next Victim"
+            };
+
+            return View(new NpcViewModel( npc));
         }
 
         // POST: Npc/Create
@@ -47,8 +66,17 @@ namespace Conan.Gererator.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Awareness,Intelligence,Personality,Agility,Brawn,Willpower,Coordination,Combat,Movement,Fortitude,Senses,Knowledge,Social")] AbstractNpc npc)
+        public ActionResult Create(NpcViewModel npc)
         {
+            var anpc = new AbstractNpc(npc);
+            if (npc.IsMinion)
+                anpc.Type = NpcType.Minion;
+            else if (npc.IsToughend)
+                anpc.Type = NpcType.Toughend;
+            else
+                anpc.Type = NpcType.Nemesis;
+
+
             if (ModelState.IsValid)
             {
                 db.Npcs.Add(npc);

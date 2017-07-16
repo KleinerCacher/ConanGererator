@@ -1,4 +1,4 @@
-﻿@model Conan.Npc.Generator.Models.AbstractNpc
+﻿@model Conan.Generator.ViewModels.NpcViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -16,12 +16,24 @@
         <h4>Npc</h4>
         <hr />
         <div class="container">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group pull-left">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input-large" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            <div class="col-md-6">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group pull-left">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input-large" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group" role="group" aria-label="...">
+                    @Html.EditorFor(model => model.IsMinion, new { htmlAtttributes = new { @class = "btn btn-default" } })
+                    @Html.EditorFor(model => model.IsToughend, new { htmlAtttributes = new { @class = "btn btn-default" } })
+                    @Html.EditorFor(model => model.IsNemesis, new { htmlAtttributes = new { @class = "btn btn-default" } })
+                    @*<input name="Minion" type="button" class="btn btn-default" checked="@Model.IsMinion"/>
+                    <input name="Toughend" type="button" class="btn btn-default" checked="@Model.IsToughend"/>
+                    <input name="Nemesis" type="button" class="btn btn-default" checked="@Model.IsNemesis"/>*@
                 </div>
             </div>
         </div>

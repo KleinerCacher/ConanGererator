@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Conan.Gererator.Models
+namespace Conan.Generator.Models
 {
     public class DatabaseContext : DbContext
     {
@@ -18,9 +18,7 @@ namespace Conan.Gererator.Models
         public DatabaseContext() : base("name=DatabaseContext")
         {
         }
-
-        public System.Data.Entity.DbSet<Conan.Npc.Generator.Models.ToughendNpc> ToughendNpcs { get; set; }
-
-        public System.Data.Entity.DbSet<Conan.Npc.Generator.Models.AbstractNpc> Npcs { get; set; }
+        
+        public System.Data.Entity.DbSet<Conan.Generator.Models.AbstractNpc> Npcs { get; set; }
     }
 }

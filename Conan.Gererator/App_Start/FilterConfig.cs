@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Conan.Gererator
+namespace Conan.Generator
 {
     public class FilterConfig
     {
