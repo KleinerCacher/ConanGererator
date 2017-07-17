@@ -1,4 +1,11 @@
 ﻿$(document).ready(function () {
+    addEventListener();
+});
+
+
+
+function addListeners()
+{
     $("#Agility").change(function () {
         $('#agilityValue').html($("#Agility").val());
         calculateShortForm();
@@ -52,7 +59,7 @@
         $('#MovementValue').html($("#Movement").val());
         calculateShortForm();
     });
-});
+}
 
 function calculateShortForm() {
     var sf = $("#Name").val();

@@ -5,11 +5,10 @@ using System.Web;
 
 namespace Conan.Generator.Models
 {
-    [Flags]
     public enum NpcType
     {
-        Minion = 2,
-        Toughend = 4,
-        Nemesis = 8
+        Minion = 1,
+        Toughend = 2,
+        Nemesis = 3
     }
 }

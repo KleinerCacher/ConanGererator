@@ -27,13 +27,16 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="btn-group" role="group" aria-label="...">
-                    @Html.EditorFor(model => model.IsMinion, new { htmlAtttributes = new { @class = "btn btn-default" } })
-                    @Html.EditorFor(model => model.IsToughend, new { htmlAtttributes = new { @class = "btn btn-default" } })
-                    @Html.EditorFor(model => model.IsNemesis, new { htmlAtttributes = new { @class = "btn btn-default" } })
-                    @*<input name="Minion" type="button" class="btn btn-default" checked="@Model.IsMinion"/>
-                    <input name="Toughend" type="button" class="btn btn-default" checked="@Model.IsToughend"/>
-                    <input name="Nemesis" type="button" class="btn btn-default" checked="@Model.IsNemesis"/>*@
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary @(Model.Type == Conan.Generator.Models.NpcType.Minion ? "active" : string.Empty)">
+                        @Html.RadioButtonFor(model => model.Type, 1, new { id = "IsMinion", @checked = Model.Type == Conan.Generator.Models.NpcType.Minion, htmlAtttributes = new { @class = "btn btn-default" } }) Minion
+                    </label>
+                    <label class="btn btn-primary @(Model.Type == Conan.Generator.Models.NpcType.Toughend ? "active" : string.Empty)">
+                        @Html.RadioButtonFor(model => model.Type, 2, new { id = "IsToughend", @checked = Model.Type == Conan.Generator.Models.NpcType.Toughend, htmlAtttributes = new { @class = "btn btn-default" } }) Toughend
+                    </label>
+                    <label class="btn btn-primary @(Model.Type == Conan.Generator.Models.NpcType.Nemesis ? "active" : string.Empty)">
+                        @Html.RadioButtonFor(model => model.Type, 3, new { id = "IsNemesis", @checked = Model.Type == Conan.Generator.Models.NpcType.Nemesis, htmlAtttributes = new { @class = "btn btn-default" } }) Nemesis
+                    </label>
                 </div>
             </div>
         </div>
@@ -290,5 +293,5 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/conangeneratorcreateedit")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 }
